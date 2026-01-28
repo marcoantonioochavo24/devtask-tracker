@@ -1,0 +1,481 @@
+/* Estilos CSS */
+
+/* variables de colores - mi paleta personalizada */
+:root {
+    --fondo-principal: #f8f9fa;
+    --fondo-secundario: #ffffff;
+    --acento-principal: #20c997;
+    --acento-secundario: #6c5ce7;
+    --texto-oscuro: #2d3436;
+    --texto-claro: #636e72;
+    --bordes: #dee2e6;
+    --sombra: rgba(108, 92, 231, 0.1);
+    --sombra-hover: rgba(108, 92, 231, 0.2);
+    --exito: #00b894;
+    --pendiente: #fdcb6e;
+    --peligro: #e17055;
+}
+
+/* reset basico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--fondo-principal);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* contenedor principal de la app */
+.contenedor-app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* cabecera con el logo */
+.cabecera {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.icono-logo {
+    font-size: 2rem;
+    color: var(--acento-principal);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--acento-principal), var(--acento-secundario));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cabecera h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--acento-principal), var(--acento-secundario));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitulo {
+    color: var(--texto-claro);
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+/* contenido principal - layout con grid */
+.contenido-principal {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    flex: 1;
+}
+
+/* seccion del formulario (sidebar izquierdo) */
+.seccion-formulario {
+    background: var(--fondo-secundario);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px var(--sombra);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.seccion-formulario h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--texto-oscuro);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.seccion-formulario h2::before {
+    content: '✏️';
+}
+
+/* estilos del formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo-campo label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--texto-claro);
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    padding: 12px 16px;
+    border: 2px solid var(--bordes);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: var(--fondo-principal);
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+    outline: none;
+    border-color: var(--acento-principal);
+    box-shadow: 0 0 0 4px rgba(32, 201, 151, 0.15);
+}
+
+.grupo-campo input::placeholder {
+    color: #b2bec3;
+}
+
+/* boton de guardar */
+.boton-guardar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--acento-principal), #00b894);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.boton-guardar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(32, 201, 151, 0.35);
+}
+
+.boton-guardar:active {
+    transform: translateY(0);
+}
+
+.icono-mas {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+/* seccion de tareas */
+.seccion-tareas {
+    background: var(--fondo-secundario);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px var(--sombra);
+}
+
+.cabecera-tareas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--bordes);
+}
+
+.cabecera-tareas h2 {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cabecera-tareas h2::before {
+    content: '📂';
+}
+
+.contador {
+    background: var(--fondo-principal);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--texto-claro);
+    font-weight: 500;
+}
+
+/* grid de tareas */
+.grid-tareas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* tarjeta de cada tarea */
+.tarjeta-tarea {
+    background: var(--fondo-principal);
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid var(--bordes);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tarjeta-tarea:hover {
+    border-color: var(--acento-principal);
+    box-shadow: 0 8px 25px var(--sombra-hover);
+    transform: translateY(-3px);
+}
+
+.tarjeta-tarea .titulo-tarea {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    margin-bottom: 12px;
+    padding-right: 30px;
+}
+
+.tarjeta-tarea .info-tarea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* badges de tecnologia con colores unicos */
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-tecnologia {
+    background: rgba(108, 92, 231, 0.12);
+    color: var(--acento-secundario);
+}
+
+/* colores especificos para cada tecnologia */
+.badge-JavaScript {
+    background: #fef3cd;
+    color: #856404;
+}
+
+.badge-Python {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-Java {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.badge-HTML {
+    background: #ffe5d0;
+    color: #c44d34;
+}
+
+.badge-CSS {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.badge-Node\.js {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-MongoDB {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.badge-Express {
+    background: #e2e3e5;
+    color: #41464b;
+}
+
+/* badge de estado */
+.badge-estado {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-pending {
+    background: rgba(253, 203, 110, 0.25);
+    color: #b8860b;
+}
+
+.badge-done {
+    background: rgba(0, 184, 148, 0.15);
+    color: #00a383;
+}
+
+/* fecha de la tarea */
+.fecha-tarea {
+    font-size: 0.8rem;
+    color: var(--texto-claro);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.fecha-tarea::before {
+    content: '📅';
+    font-size: 0.9rem;
+}
+
+/* boton de eliminar */
+.boton-eliminar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.boton-eliminar:hover {
+    background: rgba(225, 112, 85, 0.15);
+    color: var(--peligro);
+}
+
+/* mensaje cuando no hay tareas */
+.mensaje-vacio {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--texto-claro);
+}
+
+.icono-vacio {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 15px;
+    opacity: 0.6;
+}
+
+.mensaje-vacio p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.texto-secundario {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* pie de pagina */
+.pie-pagina {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: auto;
+    color: var(--texto-claro);
+    font-size: 0.9rem;
+}
+
+.pie-pagina strong {
+    color: var(--acento-principal);
+}
+
+.version {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+/* animacion de entrada para las tarjetas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tarjeta-tarea {
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+/* loading spinner */
+.loading {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--bordes);
+    border-top-color: var(--acento-principal);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* responsive para pantallas mas pequeñas */
+@media (max-width: 900px) {
+    .contenido-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion-formulario {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecera h1 {
+        font-size: 1.8rem;
+    }
+
+    .grid-tareas {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-app {
+        padding: 15px;
+    }
+}
